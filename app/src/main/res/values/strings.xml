@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">MediU-Doctor</string>
+    <string name="email">Email Address</string>
+    <string name="dob">Date of Birth</string>
+    <string name="pass">Password</string>
+    <string name="register">Register</string>
+    <string name="term">By Registering you accept Medico\'s Terms
+    </string>
+    <string name="sign">Sign in to your account</string>
+    <string name="create">Create Account</string>
+    <string name="chat">Chat</string>
+    <string name="profile">Profile</string>
+    <string name="myhealth">My Health</string>
+    <string name="appointments">Appointments</string>
+    <string name="healthfeed">Health Feed</string>
+    <string name="welcome">Welcome,</string>
+    <string name="help">How can we help you today?</string>
+    <string name="seedoctor">See a Medical Doctor Now</string>
+    <string name="history">Visit History</string>
+    <string name="documents">Documents</string>
+    <string name="lab">Lab Tests</string>
+    <string name="add">Add Appointment</string>
+    <string name="nod">No Documents</string>
+    <string name="upload">Upload Document</string>
+    <string name="no">No Upcoming Appointments</string>
+    <string name="nolab">No Lab Results</string>
+    <string name="message">Messages</string>
+    <string name="ask">Ask a New Question</string>
+    <string name="nom">No Messages Yet</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstname"> First Name</string>
+    <string name="lastname"> Last Name</string>
+    <string name="phone"> Mobile Number</string>
+    <string name="age"> Age</string>
+    <string name="address"> Address</string>
+    <string name="basic_profile"> Update Basic Information</string>
+    <string name="password"> Change Password</string>
+    <string name="oldpassword"> Enter Old Password*</string>
+    <string name="newpassword"> Enter New Password*</string>
+    <string name="repassword"> Re Enter New Password*</string>
+    <string name="submit">SUBMIT</string>
+
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.asus.mediudoc.MainActivity">
+
+    <TextView
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/login"
+        android:layout_below="@+id/register"
+        android:layout_marginTop="72dp"
+        android:text="Welcome to MEDIU DOCTOR"
+        android:textColor="#08ad60"
+        android:textSize="36dp"
+        android:paddingTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <Button
+        android:id="@+id/register"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/login"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:background="#08ad60"
+        android:text="Need a new account" />
+    <TextView
+        android:layout_width="332dp"
+        android:layout_height="50dp" />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="110dp"
+        android:background="#08ad60"
+        android:text="Already have an account" />
+
+
+</LinearLayout>

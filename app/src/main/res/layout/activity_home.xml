@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.asus.mediudoc.Home"
+        android:orientation="vertical" >
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/border2"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+
+            <!--android:onClick="myhealth"    add it below-->
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="0dp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="@drawable/selectors"
+                android:clickable="true"
+                android:paddingTop="15sp"
+                android:text="@string/myhealth"
+                android:textAlignment="center"
+                android:textColor="#039953" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="0dp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="@drawable/selectors"
+                android:clickable="true"
+                android:onClick="appointments"
+                android:paddingTop="15sp"
+                android:text="@string/appointments"
+                android:textAlignment="center"
+                android:textColor="#039953"
+                tools:ignore="OnClick" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="0dp"
+                android:layout_height="50sp"
+                android:layout_weight="1"
+                android:background="@drawable/selectors"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="healthfeed"
+                android:paddingTop="15sp"
+                android:text="@string/healthfeed"
+                android:textAlignment="center"
+                android:textColor="#039953" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:padding="15dp"
+            android:textAlignment="center">
+
+            <!--fetch data and put it next to welcome-->
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/welcome"
+                android:textColor="#039953"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20sp"
+            android:paddingTop="5sp"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/help"
+                android:textColor="#686d6a"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_margin="15sp"
+            android:background="#08ad60"
+            android:drawableEnd="@drawable/arrow"
+            android:drawableRight="@drawable/arrow"
+            android:paddingEnd="0sp"
+            android:paddingLeft="15sp"
+            android:paddingRight="0sp"
+            android:paddingStart="15sp"
+            android:text="@string/seedoctor"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
