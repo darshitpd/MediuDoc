@@ -122,5 +122,16 @@
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textSize="15sp" />
+    <Button
+        android:id="@+id/userreqlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request List"
+        android:onClick="openrequestlist"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Connected Users"
+        android:onClick="openconnecteduserslist"/>
 
     </LinearLayout>

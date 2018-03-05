@@ -53,6 +53,14 @@ public class Home extends AppCompatActivity {
     public void healthfeed(View view) {
         Intent intent = new Intent(this, HealthFeed.class);
         startActivity(intent);    }
+    public void openrequestlist(View view){
+        Intent intent = new Intent(this, ReceivedRequestListActivity.class);
+        startActivity(intent);
+    }
+    public void openconnecteduserslist(View view){
+        Intent intent = new Intent(this, ConnectedPatientList.class);
+        startActivity(intent);
+    }
 
 //    public void myhealth(View view) {
 //        Intent intent = new Intent(this, MyHealth.class);
