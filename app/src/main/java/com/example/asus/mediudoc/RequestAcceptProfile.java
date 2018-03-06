@@ -33,7 +33,6 @@ public class RequestAcceptProfile extends AppCompatActivity {
 
     private DatabaseReference mUsersDatabase;
     private DatabaseReference mConnectReqDatabase;
-    private DatabaseReference mPatientInfoDatabase;
     private DatabaseReference mDoctorInfoDatabase;
     private DatabaseReference mConnectDatabase;
 
@@ -80,85 +79,6 @@ public class RequestAcceptProfile extends AppCompatActivity {
 
             }
         });
-//
-//        mProfileAcceptReqBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                if(mCurrent_state == 3){
-//                    final String currentdate = DateFormat.getDateTimeInstance().format(new Date());
-//                    mConnectDatabase.child(mCurrent_user.getUid()).child(user_id).child("date").setValue(currentdate).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                        @Override
-//                        public void onComplete(@NonNull Task<Void> task) {
-//                            mPatientInfoDatabase.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot) {
-//                                    String firstname= dataSnapshot.child(user_id).child("firstname").getValue().toString();
-//                                    String lastname= dataSnapshot.child(user_id).child("lastname").getValue().toString();
-//                                    String fullname = firstname+" "+lastname;
-//                                    String image = dataSnapshot.child(user_id).child("image").getValue().toString();
-//                                    mConnectDatabase.child(mCurrent_user.getUid()).child(user_id).child("fullname").setValue(fullname);
-//                                    mConnectDatabase.child(mCurrent_user.getUid()).child(user_id).child("image").setValue(image);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
-//
-//                            mConnectDatabase.child(user_id).child(mCurrent_user.getUid()).child("date").setValue(currentdate).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                    mUsersDatabase.addValueEventListener(new ValueEventListener() {
-//                                        @Override
-//                                        public void onDataChange(DataSnapshot dataSnapshot) {
-//                                            String firstname= dataSnapshot.child(mCurrent_user.getUid()).child("firstname").getValue().toString();
-//                                            String lastname= dataSnapshot.child(mCurrent_user.getUid()).child("lastname").getValue().toString();
-//                                            String fullname = firstname+" "+lastname;
-//                                            String image = dataSnapshot.child(mCurrent_user.getUid()).child("image").getValue().toString();
-//                                            mConnectDatabase.child(user_id).child(mCurrent_user.getUid()).child("fullname").setValue(fullname);
-//                                            mConnectDatabase.child(user_id).child(mCurrent_user.getUid()).child("image").setValue(image);
-//                                        }
-//
-//                                        @Override
-//                                        public void onCancelled(DatabaseError databaseError) {
-//
-//                                        }
-//                                    });
-//
-//
-//                                    mConnectReqDatabase.child(mCurrent_user.getUid()).child(user_id).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                        @Override
-//                                        public void onComplete(@NonNull Task<Void> task) {
-//                                            if(task.isSuccessful()){
-//                                                mConnectReqDatabase.child(user_id).child(mCurrent_user.getUid()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                                    @Override
-//                                                    public void onComplete(@NonNull Task<Void> task) {
-//                                                        if(task.isSuccessful()){
-//                                                            mCurrent_state = 4;
-//                                                            mProfileAcceptReqBtn.setText("Remove Connection");
-//                                                            Toast.makeText(RequestAcceptProfile.this, "Connected.",
-//                                                                    Toast.LENGTH_SHORT).show();
-//                                                            Intent intent = new Intent(RequestAcceptProfile.this, ReceivedRequestListActivity.class);
-//                                                            startActivity(intent);
-//                                                        }
-//                                                    }
-//                                                });
-//                                            }else {
-//                                                Toast.makeText(RequestAcceptProfile.this, "Error in connecting.",
-//                                                        Toast.LENGTH_SHORT).show();
-//                                            }
-//                                        }
-//                                    });
-//                                }
-//                            });
-//                        }
-//                    });
-//
-//                }
-//            }
-//        });
 
         mProfileAcceptReqBtn.setOnClickListener(new View.OnClickListener() {
             @Override

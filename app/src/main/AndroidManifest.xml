@@ -37,7 +37,9 @@
         <activity android:name=".ReceivedRequestListActivity" />
         <activity android:name=".RequestAcceptProfile" />
         <activity android:name=".ConnectedPatientList" />
-        <activity android:name=".ConnectedPatientProfile"></activity>
+        <activity android:name=".ConnectedPatientProfile" />
+        <activity android:name=".PostBlogActivity" />
+        <activity android:name=".DisplayBlogsActivity"></activity>
     </application>
 
 </manifest>
