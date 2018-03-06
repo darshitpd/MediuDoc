@@ -1,5 +1,6 @@
 package com.example.asus.mediudoc;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -30,6 +31,7 @@ public class ReceivedRequestListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_received_request_list);
 
+
         mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Connect_Req").child(mCurrent_user.getUid());
 
@@ -50,6 +52,7 @@ public class ReceivedRequestListActivity extends AppCompatActivity {
 
                 usersViewHolder.setDisplayName(users.getName());
                 usersViewHolder.setUserImage(users.getImage(), getApplicationContext());
+
                 final String user_id = getRef(i).getKey();
                 usersViewHolder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
