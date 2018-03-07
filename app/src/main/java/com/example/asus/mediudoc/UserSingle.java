@@ -6,7 +6,7 @@ package com.example.asus.mediudoc;
 
 public class UserSingle {
 
-    public String fullname;
+    public String name;
     public String image;
 
 
@@ -14,17 +14,17 @@ public class UserSingle {
 
     }
 
-    public UserSingle(String fullname, String image) {
-        this.fullname = fullname;
+    public UserSingle(String name, String image) {
+        this.name = name;
         this.image = image;
     }
 
     public String getName() {
-        return fullname;
+        return name;
     }
 
-    public void setName(String fullname) {
-        this.fullname = fullname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getImage() {
