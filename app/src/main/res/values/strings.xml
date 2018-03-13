@@ -9,6 +9,7 @@
     <string name="sign">Sign in to your account</string>
     <string name="create">Create Account</string>
     <string name="chat">Chat</string>
+    <string name="chat_edit_message">Enter Your message Here...</string>
     <string name="profile">Profile</string>
     <string name="myhealth">My Health</string>
     <string name="appointments">Appointments</string>

@@ -71,11 +71,7 @@ public class Home extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_chat:
-                //Code to run when the Create Order item is clicked
-                Intent intent = new Intent(this, Chat.class);
-                startActivity(intent);
-                return true;
+
 
             case R.id.action_accountsettings:
                 // Code to run when the settings item is clicked
