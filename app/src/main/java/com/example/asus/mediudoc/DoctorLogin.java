@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,7 +22,6 @@ public class DoctorLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
     private Button signin;
-    private DatabaseReference mDatabase;
     private ProgressDialog mProgressDialog;
 
     @Override
@@ -31,6 +31,8 @@ public class DoctorLogin extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mAuth = FirebaseAuth.getInstance();
+
+        mProgressDialog = new ProgressDialog(this);
 
         signin= (Button)findViewById(R.id.signin);
         email= (EditText)findViewById(R.id.etEmail);
@@ -46,7 +48,20 @@ public class DoctorLogin extends AppCompatActivity {
             public void onClick(View view) {
                 String getemail = email.getText().toString().trim();
                 String getpassword = password.getText().toString().trim();
-                callsignin(getemail,getpassword);
+
+                if(!TextUtils.isEmpty(getemail) && !TextUtils.isEmpty(getpassword))
+                {
+                    mProgressDialog.setTitle("Signing In");
+                    mProgressDialog.setMessage("Please wait while we check your credentials");
+                    mProgressDialog.setCanceledOnTouchOutside(false);
+                    mProgressDialog.show();
+                    callsignin(getemail,getpassword);
+                }
+                else {
+                    Toast.makeText(DoctorLogin.this, "Please enter all the details.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }
@@ -65,9 +80,11 @@ public class DoctorLogin extends AppCompatActivity {
 // the auth state listener will be notified and logic to handle the
 // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(DoctorLogin.this, "Wrong password", Toast.LENGTH_SHORT).show();
+                            mProgressDialog.dismiss();
+                            Toast.makeText(DoctorLogin.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
                         }
                         else {
+                            mProgressDialog.dismiss();
                             Intent i = new Intent(DoctorLogin.this, Home.class);
                             finish();
                             startActivity(i);

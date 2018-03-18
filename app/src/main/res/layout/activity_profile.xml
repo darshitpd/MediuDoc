@@ -67,9 +67,9 @@
 
     </LinearLayout>
 
-    <EditText
+    <TextView
 
-        android:id="@+id/etEmail"
+        android:id="@+id/tvEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_profile"
@@ -98,14 +98,14 @@
 
     <EditText
 
-        android:id="@+id/etAge"
+        android:id="@+id/etSpecialist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_phone"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:hint="@string/age"
-        android:inputType="date"
+        android:hint="Specialist"
+        android:inputType="text"
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
