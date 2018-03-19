@@ -47,7 +47,7 @@ public class SingleBlogPostFull extends AppCompatActivity {
                 mpost_date.setText(date);
                 mpost_title.setText(title);
                 mpost_description.setText(description);
-                Picasso.with(SingleBlogPostFull.this).load(image).placeholder(R.drawable.default_avatar).into(mpost_image);
+                Picasso.with(SingleBlogPostFull.this).load(image).placeholder(R.drawable.progress_animation).into(mpost_image);
             }
 
             @Override

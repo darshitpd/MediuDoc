@@ -99,7 +99,7 @@ public class DisplayBlogsActivity extends AppCompatActivity {
 
             ImageView userImageView = (ImageView) mView.findViewById(R.id.post_image);
 
-            Picasso.with(ctx).load(image).into(userImageView);
+            Picasso.with(ctx).load(image).placeholder(R.drawable.loading_text).into(userImageView);
 
         }
 

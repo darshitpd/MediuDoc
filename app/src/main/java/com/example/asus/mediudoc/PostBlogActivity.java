@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -62,9 +64,10 @@ public class PostBlogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent galleryIntent=new Intent(Intent.ACTION_GET_CONTENT);
-                galleryIntent.setType("image/*");
-                startActivityForResult(galleryIntent,Gallery_request);
+                CropImage.activity()
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .setAspectRatio(4,3)
+                        .start(PostBlogActivity.this);
             }
         });
         mSubmitBtn.setOnClickListener(new View.OnClickListener() {
@@ -117,13 +120,18 @@ public class PostBlogActivity extends AppCompatActivity {
                 }
             });
         }
+        else{
+            mProgress.dismiss();
+            Toast.makeText(PostBlogActivity.this, "Please full up all the details", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode==Gallery_request && resultCode==RESULT_OK){
-            mImageUri=data.getData();
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            mImageUri=result.getUri();
             mSelectImage.setImageURI(mImageUri);
         }
     }

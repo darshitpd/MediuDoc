@@ -39,12 +39,13 @@
     <EditText
         android:id="@+id/etDescription"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/etTitle"
-        android:layout_marginTop="29dp"
+        android:layout_margin= "10dp"
         android:background="@drawable/outline"
         android:ems="10"
+        android:gravity="top"
         android:hint="Post Description ..."
         android:inputType="textMultiLine"
         android:padding="15dp" />
@@ -56,4 +57,5 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         />
+
 </RelativeLayout>
