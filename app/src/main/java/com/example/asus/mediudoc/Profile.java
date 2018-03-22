@@ -13,12 +13,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,8 +64,8 @@ public class Profile extends AppCompatActivity {
     private Button mSaveButton;
     private CircleImageView image_profile;
     private ProgressDialog mProgressDialog;
-    private EditText mFirstname, mLastname, mMobile, mSpecialist, mDob, mAddress;
-    private TextView mEmail;
+    private EditText mFirstname, mLastname, mMobile, mAddress;
+    private TextView mEmail,mDob;
     private RadioGroup rg_gender;
     private RadioButton radioButton, radiobutton_male, radiobutton_female;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -80,12 +83,21 @@ public class Profile extends AppCompatActivity {
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
 
+        final Spinner mySpinner= (Spinner)findViewById(R.id.specialist_spinner);
+
+        ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(Profile.this, android.R.layout.simple_list_item_1,
+                getResources().getStringArray(R.array.specialist_array));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mySpinner.setAdapter(myAdapter);
+
+
+
         mFirstname = (EditText)findViewById(R.id.etFirstname);
         mLastname = (EditText)findViewById(R.id.etLastname);
-        mSpecialist = (EditText)findViewById(R.id.etSpecialist);
+        //mSpecialist = (EditText)findViewById(R.id.etSpecialist);
         mMobile = (EditText)findViewById(R.id.etMobile);
         mEmail = (TextView) findViewById(R.id.tvEmail);
-        mDob = (EditText)findViewById(R.id.etDob);
+        mDob = (TextView) findViewById(R.id.etDob);
         mAddress = (EditText)findViewById(R.id.etAddress);
         mSaveButton = (Button)findViewById(R.id.saveButton);
         image_profile = (CircleImageView) findViewById(R.id.image_profile);
@@ -121,11 +133,18 @@ public class Profile extends AppCompatActivity {
                 mMobile.setText(mobile);
                 mDob.setText(dob);
                 mAddress.setText(address);
-                mSpecialist.setText(specialist);
+               // mSpecialist.setText(specialist);
                 if(gender.equals("Male")){
                     radiobutton_male.setChecked(true);
                 }else if(gender.equals("Female")){
                     radiobutton_female.setChecked(true);
+                }
+                if(specialist.equals("Ophthalmologist")){
+                    mySpinner.setSelection(1);
+                }else if(specialist.equals("Dentist")){
+                    mySpinner.setSelection(2);
+                }else {
+                    mySpinner.setSelection(0);
                 }
 
                 if(!image.equals("default")) {
@@ -177,14 +196,13 @@ public class Profile extends AppCompatActivity {
                 String firstname=  mFirstname.getEditableText().toString();
                 String lastname = mLastname.getEditableText().toString();
                 String mobile = mMobile.getEditableText().toString();
-                String dob = mDob.getEditableText().toString();
                 String address = mAddress.getEditableText().toString();
-                String specialist = mSpecialist.getEditableText().toString();
+                //String specialist = mSpecialist.getEditableText().toString();
                 radioButton = findViewById(rg_gender.getCheckedRadioButtonId());
                 String gender= radioButton.getText().toString();
 
-                if(!TextUtils.isEmpty(firstname) && !TextUtils.isEmpty(lastname) && !TextUtils.isEmpty(mobile) && !TextUtils.isEmpty(dob)
-                        && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(gender) && !TextUtils.isEmpty(specialist)) {
+                if(!TextUtils.isEmpty(firstname) && !TextUtils.isEmpty(lastname) && !TextUtils.isEmpty(mobile)
+                        && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(gender)) {
                     mUserDatabase.child("firstname").setValue(firstname);
                     mUserDatabase.child("lastname").setValue(lastname);
                     if(mobile.length()==10){
@@ -192,10 +210,12 @@ public class Profile extends AppCompatActivity {
                     else {
                         Toast.makeText(Profile.this, "Please enter valid mobile number", Toast.LENGTH_SHORT).show();
                     }
-                    mUserDatabase.child("dob").setValue(dob);
-                    mUserDatabase.child("address").setValue(address);
-                    mUserDatabase.child("gender").setValue(gender);
-                    mUserDatabase.child("specialist").setValue(specialist).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    if (address.length() > 20){
+                        mUserDatabase.child("address").setValue(address);
+                    }else {
+                        Toast.makeText(Profile.this, "Please enter a valid address", Toast.LENGTH_SHORT).show();
+                    }
+                    mUserDatabase.child("gender").setValue(gender).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -209,12 +229,34 @@ public class Profile extends AppCompatActivity {
                     });
                 }
                 else {
+                    mProgressDialog.dismiss();
                     Toast.makeText(Profile.this, "Please fill up all the details", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
+
+
+        mySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i==0){
+//                    Toast.makeText(Profile.this, "Please select a valid option", Toast.LENGTH_SHORT).show();
+                }
+                else if(i==1){
+                    mUserDatabase.child("specialist").setValue("Ophthalmologist");
+                }else if(i==2)
+                {
+                    mUserDatabase.child("specialist").setValue("Dentist");
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         image_profile.setOnClickListener(new View.OnClickListener() {
             // Start new list activity

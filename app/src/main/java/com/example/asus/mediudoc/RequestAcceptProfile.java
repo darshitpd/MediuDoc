@@ -131,7 +131,7 @@ public class RequestAcceptProfile extends AppCompatActivity {
                                    mConnectReqDatabase.child(mCurrent_user.getUid()).child(user_id).removeValue();
                                    mConnectReqDatabase.child(user_id).child(mCurrent_user.getUid()).removeValue();
                                    Toast.makeText(RequestAcceptProfile.this, "Connected", Toast.LENGTH_SHORT).show();
-                                   Intent intent = new Intent(RequestAcceptProfile.this, ReceivedRequestListActivity.class);
+                                   Intent intent = new Intent(RequestAcceptProfile.this, ConnectedPatientList.class);
                                    startActivity(intent);
                                }
                            }

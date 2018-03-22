@@ -117,6 +117,7 @@ public class PostBlogActivity extends AppCompatActivity {
                     });
                     mProgress.dismiss();
                     Toast.makeText(PostBlogActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), DisplayBlogsActivity.class));
                 }
             });
         }

@@ -40,5 +40,11 @@
     <string name="newpassword"> Enter New Password*</string>
     <string name="repassword"> Re Enter New Password*</string>
     <string name="submit">SUBMIT</string>
+    
+    <string-array name="specialist_array">
+        <item>Please select an option</item>
+        <item>Ophthalmologist</item>
+        <item>Dentist</item>
+    </string-array>
 
 </resources>
