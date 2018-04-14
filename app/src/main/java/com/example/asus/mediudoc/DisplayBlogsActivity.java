@@ -24,6 +24,9 @@ public class DisplayBlogsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_blogs);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("View Healthfeed");
+
 
         mBlogDatabase = FirebaseDatabase.getInstance().getReference().child("Feed");
 

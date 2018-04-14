@@ -36,6 +36,8 @@ public class DoctorRegister extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_register);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mAuth = FirebaseAuth.getInstance();
         mProgressDialog = new ProgressDialog(this);
@@ -99,6 +101,7 @@ public class DoctorRegister extends AppCompatActivity {
                             userMap.put("gender", "");
                             userMap.put("mobile", "");
                             userMap.put("email", email);
+                            userMap.put("experience","");
 
                             mDatabase.setValue(userMap);
 

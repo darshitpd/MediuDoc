@@ -32,6 +32,10 @@ public class ConnectedPatientList extends AppCompatActivity {
         setContentView(R.layout.activity_connected_patient_list);
         mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();
         mUsersDatabase = FirebaseDatabase.getInstance().getReference().child("ConnectedList").child(mCurrent_user.getUid());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Connected Patients");
+
+
 
         mUsersList = (RecyclerView) findViewById(R.id.req_users_list);
         mUsersList.setHasFixedSize(true);

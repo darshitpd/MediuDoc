@@ -4,8 +4,7 @@
     <string name="dob">Date of Birth</string>
     <string name="pass">Password</string>
     <string name="register">Register</string>
-    <string name="term">By Registering you accept Medico\'s Terms
-    </string>
+    <string name="term">By Registering you accept Medico\'s Terms</string>
     <string name="sign">Sign in to your account</string>
     <string name="create">Create Account</string>
     <string name="chat">Chat</string>
@@ -40,7 +39,8 @@
     <string name="newpassword"> Enter New Password*</string>
     <string name="repassword"> Re Enter New Password*</string>
     <string name="submit">SUBMIT</string>
-    
+    <string name="clinicaddress">Clinic Address</string>
+    <string name="exp">Enter Years of Experience</string>
     <string-array name="specialist_array">
         <item>Please select an option</item>
         <item>Ophthalmologist</item>

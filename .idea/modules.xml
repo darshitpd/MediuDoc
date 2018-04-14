@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mediudoc.iml" filepath="$PROJECT_DIR$/Mediudoc.iml" />
-      <module fileurl="file://C:\Users\asus\Desktop\Mediudoc\.idea\Mediudoc.iml" filepath="C:\Users\asus\Desktop\Mediudoc\.idea\Mediudoc.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -26,6 +26,7 @@ public class PasswordChange extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password_change);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Change Password");
 
         email= (EditText)findViewById(R.id.etEmail);
         password = (EditText)findViewById(R.id.etPassword);

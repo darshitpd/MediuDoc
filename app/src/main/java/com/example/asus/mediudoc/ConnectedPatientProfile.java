@@ -36,6 +36,8 @@ public class ConnectedPatientProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connected_patient_profile);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         final String user_id = getIntent().getStringExtra("user_id");
 
@@ -57,6 +59,8 @@ public class ConnectedPatientProfile extends AppCompatActivity {
                 String image = dataSnapshot.child("image").getValue().toString();
 
                 mProfileName.setText(display_name);
+                getSupportActionBar().setTitle(firstname);
+
 
                 Picasso.with(ConnectedPatientProfile.this).load(image).placeholder(R.drawable.default_avatar).into(mProfileImage);
             }

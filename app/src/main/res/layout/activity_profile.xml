@@ -124,6 +124,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -147,15 +149,31 @@
 
     </LinearLayout>
 
+
+    <EditText
+
+        android:id="@+id/etExp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDob"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:hint="@string/exp"
+        android:digits="0123456789"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
     <EditText
 
         android:id="@+id/etAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittext_age"
+        android:layout_below="@+id/etExp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:hint="@string/address"
+        android:hint="@string/clinicaddress"
         android:inputType="textPostalAddress"
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"

@@ -45,6 +45,7 @@ public class RequestAcceptProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_accept_profile);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final String user_id = getIntent().getStringExtra("user_id");
 

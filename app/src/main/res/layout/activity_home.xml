@@ -85,6 +85,16 @@
                 android:textColor="#039953"
                 android:textSize="35sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/firstname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#039953"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -118,20 +128,10 @@
             android:paddingLeft="15sp"
             android:paddingRight="0sp"
             android:paddingStart="15sp"
-            android:text="@string/seedoctor"
+            android:text="View Patients"
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
-            android:textSize="15sp" />
-    <Button
-        android:id="@+id/userreqlist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Request List"
-        android:onClick="openrequestlist"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Connected Users"
-        android:onClick="openconnecteduserslist"/>
+            android:textSize="15sp"
+            android:onClick="openconnectionsettings"/>
 
     </LinearLayout>

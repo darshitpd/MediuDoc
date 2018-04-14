@@ -34,6 +34,9 @@ public class ProfilePicture extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String image = dataSnapshot.child("image").getValue().toString();
+                String chat_first_name = dataSnapshot.child("firstname").getValue().toString();
+                getSupportActionBar().setTitle(chat_first_name);
+
                 Picasso.with(ProfilePicture.this).load(image).placeholder(R.drawable.default_avatar).into(image_profile);
 
             }
