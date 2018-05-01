@@ -99,6 +99,7 @@ public class DoctorRegister extends AppCompatActivity {
                             userMap.put("dob", "");
                             userMap.put("address", "");
                             userMap.put("gender", "");
+                            userMap.put("pincode", "");
                             userMap.put("mobile", "");
                             userMap.put("email", email);
                             userMap.put("experience","");

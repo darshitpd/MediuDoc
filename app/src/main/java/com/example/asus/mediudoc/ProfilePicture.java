@@ -29,7 +29,7 @@ public class ProfilePicture extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String current_uid = mCurrentUser.getUid();
 
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Patient_Users").child(current_uid);
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Users").child(current_uid);
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

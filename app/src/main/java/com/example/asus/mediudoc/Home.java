@@ -37,7 +37,7 @@ public class Home extends AppCompatActivity {
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         String current_uid = mCurrentUser.getUid();
 
-        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Patient_Users").child(current_uid);
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Users").child(current_uid);
 
 
         mFirstname = (TextView) findViewById(R.id.firstname);
@@ -56,7 +56,7 @@ public class Home extends AppCompatActivity {
         mUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String firstname= dataSnapshot.child("firstname").getValue().toString();
+                String firstname = dataSnapshot.child("firstname").getValue().toString();
 
                 mFirstname.setText(firstname);
             }
