@@ -30,6 +30,9 @@ public class ReceivedRequestListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_received_request_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Received Requests");
+
 
 
         mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();

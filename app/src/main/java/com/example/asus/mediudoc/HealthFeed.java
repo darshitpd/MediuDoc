@@ -11,6 +11,8 @@ public class HealthFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_feed);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
     public void postblog(View view){
         Intent intent = new Intent(this, PostBlogActivity.class);

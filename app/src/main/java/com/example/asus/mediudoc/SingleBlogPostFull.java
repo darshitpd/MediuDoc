@@ -23,6 +23,8 @@ public class SingleBlogPostFull extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_blog_post_full);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mpost_author= (TextView)findViewById(R.id.post_author);
         mpost_date=(TextView)findViewById(R.id.post_date);

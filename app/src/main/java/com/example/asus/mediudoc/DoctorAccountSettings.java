@@ -18,6 +18,7 @@ public class DoctorAccountSettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_account_settings);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Account Settings");
 
         openprofile=(TextView)findViewById(R.id.action_profile);
         changepassword = (TextView)findViewById(R.id.action_changepassword);

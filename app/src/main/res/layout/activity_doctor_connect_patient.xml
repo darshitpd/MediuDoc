@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.mediudoc.Doctor_connect_patient">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Home"
+        >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".Home"
+            android:layout_margin="10sp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border2"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_marginBottom="5sp"
+                android:layout_marginTop="15sp"
+                >
+                <TextView
+                    android:id="@+id/action_openReceivedRequestlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:textColor="#686d6a"
+                    android:text="Request List"
+                    android:textSize="20sp"
+                    android:paddingLeft="15sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="0sp"
+                    android:paddingRight="0sp"
+                    android:layout_margin="5sp"
+                    android:paddingTop="5sp"
+                    android:drawableRight="@drawable/ic_action_name2"
+                    android:drawableEnd="@drawable/ic_action_name2"
+                    android:background= "@drawable/selectors"
+                    android:clickable="true"
+                    />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border2"
+                android:layout_margin="5sp"
+                >
+                <TextView
+                    android:id="@+id/action_openconnectedPatientslist"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:textColor="#686d6a"
+                    android:text="See Connected Patients"
+                    android:background="@drawable/selectors"
+                    android:textSize="20sp"
+                    android:paddingLeft="15sp"
+                    android:paddingStart="15sp"
+                    android:paddingEnd="0sp"
+                    android:paddingRight="0sp"
+                    android:layout_margin="5sp"
+                    android:paddingTop="5sp"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/ic_action_name2"
+                    android:drawableEnd="@drawable/ic_action_name2"
+                    />
+            </FrameLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

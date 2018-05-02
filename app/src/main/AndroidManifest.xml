@@ -13,29 +13,72 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".MainActivity">
+
         </activity>
-        <activity android:name=".DoctorLogin" />
-        <activity android:name=".DoctorRegister" />
+        <activity
+            android:name=".DoctorLogin"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".DoctorRegister"
+            android:parentActivityName=".MainActivity" />
+
         <activity android:name=".Home" />
-        <activity android:name=".Profile" />
-        <activity android:name=".PasswordChange" />
-        <activity android:name=".ProfilePicture" />
-        <activity android:name=".ForgetPassword" />
-        <activity android:name=".DoctorAccountSettings" />
-        <activity android:name=".Appointments" />
-        <activity android:name=".Chat" />
-        <activity android:name=".HealthFeed" />
+
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".DoctorAccountSettings" />
+        <activity
+            android:name=".PasswordChange"
+            android:parentActivityName=".DoctorAccountSettings" />
+        <activity
+            android:name=".ProfilePicture"
+            android:parentActivityName=".Profile" />
+        <activity
+            android:name=".ForgetPassword"
+            android:parentActivityName=".DoctorLogin" />
+        <activity
+            android:name=".DoctorAccountSettings"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Appointments"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Chat"
+            android:parentActivityName=".ConnectedPatientList"/>
+
+        <activity android:name=".HealthFeed"
+            android:parentActivityName=".Home"/>
+
+
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".ReceivedRequestListActivity" />
-        <activity android:name=".RequestAcceptProfile" />
-        <activity android:name=".ConnectedPatientList" />
-        <activity android:name=".ConnectedPatientProfile" />
-        <activity android:name=".PostBlogActivity" />
-        <activity android:name=".DisplayBlogsActivity" />
-        <activity android:name=".SingleBlogPostFull" />
+
+
+        <activity
+            android:name=".ReceivedRequestListActivity"
+            android:parentActivityName=".Doctor_connect_patient" />
+        <activity
+            android:name=".RequestAcceptProfile"
+            android:parentActivityName=".ReceivedRequestListActivity" />
+        <activity
+            android:name=".ConnectedPatientList"
+            android:parentActivityName=".Doctor_connect_patient" />
+        <activity
+            android:name=".ConnectedPatientProfile"
+            android:parentActivityName=".ConnectedPatientList"/>
+        <activity
+            android:name=".PostBlogActivity"
+            android:parentActivityName=".HealthFeed"/>
+        <activity
+            android:name=".DisplayBlogsActivity"
+            android:parentActivityName=".HealthFeed"/>
+        <activity
+            android:name=".SingleBlogPostFull"
+            android:parentActivityName=".DisplayBlogsActivity"/>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +86,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Doctor_connect_patient"
+            android:parentActivityName=".Home"></activity>
     </application>
 
 </manifest>

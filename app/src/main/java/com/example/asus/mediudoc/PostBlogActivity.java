@@ -50,6 +50,10 @@ public class PostBlogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_blog);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Post Blog");
+
+
         mStorage= FirebaseStorage.getInstance().getReference();
         mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();
         mDatabase= FirebaseDatabase.getInstance().getReference().child("Feed");

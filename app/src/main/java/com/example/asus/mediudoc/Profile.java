@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -64,7 +65,7 @@ public class Profile extends AppCompatActivity {
     private Button mSaveButton;
     private CircleImageView image_profile;
     private ProgressDialog mProgressDialog;
-    private EditText mFirstname, mLastname, mMobile, mAddress;
+    private EditText mFirstname, mLastname, mMobile, mAddress, mExp , mpincode;
     private TextView mEmail,mDob;
     private RadioGroup rg_gender;
     private RadioButton radioButton, radiobutton_male, radiobutton_female;
@@ -75,6 +76,7 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Profile");
 
 
         mProgressDialog = new ProgressDialog(this);
@@ -99,11 +101,13 @@ public class Profile extends AppCompatActivity {
         mEmail = (TextView) findViewById(R.id.tvEmail);
         mDob = (TextView) findViewById(R.id.etDob);
         mAddress = (EditText)findViewById(R.id.etAddress);
+        mExp = (EditText) findViewById(R.id.etExp);
         mSaveButton = (Button)findViewById(R.id.saveButton);
         image_profile = (CircleImageView) findViewById(R.id.image_profile);
         rg_gender = (RadioGroup)findViewById(R.id.radiogroup_gender);
         radiobutton_male = (RadioButton)findViewById(R.id.radiobutton_male);
         radiobutton_female = (RadioButton)findViewById(R.id.radiobutton_female);
+        mpincode = (EditText)findViewById(R.id.etpincode);
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         mImageStorage = FirebaseStorage.getInstance().getReference();
@@ -126,6 +130,8 @@ public class Profile extends AppCompatActivity {
                 String specialist = dataSnapshot.child("specialist").getValue().toString();
                 String gender = dataSnapshot.child("gender").getValue().toString();
                 String thumbnail = dataSnapshot.child("thumbnail").getValue().toString();
+                String exp = dataSnapshot.child("experience").getValue().toString();
+                String pincode = dataSnapshot.child("pincode").getValue().toString();
 
                 mFirstname.setText(firstname);
                 mLastname.setText(lastname);
@@ -133,7 +139,11 @@ public class Profile extends AppCompatActivity {
                 mMobile.setText(mobile);
                 mDob.setText(dob);
                 mAddress.setText(address);
+                mExp.setText(exp);
                // mSpecialist.setText(specialist);
+                mpincode.setText(pincode);
+
+
                 if(gender.equals("Male")){
                     radiobutton_male.setChecked(true);
                 }else if(gender.equals("Female")){
@@ -186,6 +196,8 @@ public class Profile extends AppCompatActivity {
             }
         };
 
+
+
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,9 +209,11 @@ public class Profile extends AppCompatActivity {
                 String lastname = mLastname.getEditableText().toString();
                 String mobile = mMobile.getEditableText().toString();
                 String address = mAddress.getEditableText().toString();
+                String exp = mExp.getEditableText().toString();
                 //String specialist = mSpecialist.getEditableText().toString();
                 radioButton = findViewById(rg_gender.getCheckedRadioButtonId());
                 String gender= radioButton.getText().toString();
+                String pincode = mpincode.getEditableText().toString();
 
                 if(!TextUtils.isEmpty(firstname) && !TextUtils.isEmpty(lastname) && !TextUtils.isEmpty(mobile)
                         && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(gender)) {
@@ -227,11 +241,28 @@ public class Profile extends AppCompatActivity {
                             }
                         }
                     });
+
+                    if(exp.length()>0 && exp.length()< 3){
+                        mUserDatabase.child("experience").setValue(exp);
+                    }
+                    else{
+                        Toast.makeText(Profile.this, "Please enter valid Experience", Toast.LENGTH_SHORT).show();
+                    }
+
+                    if(pincode.length() == 6){
+                        mUserDatabase.child("pincode").setValue(pincode);
+                    }
+                    else{
+                        Toast.makeText(Profile.this, "Please enter valid Pincode", Toast.LENGTH_SHORT).show();
+                    }
+
+
                 }
                 else {
                     mProgressDialog.dismiss();
                     Toast.makeText(Profile.this, "Please fill up all the details", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });
@@ -293,6 +324,9 @@ public class Profile extends AppCompatActivity {
         });
 
     }
+
+
+
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
