@@ -103,6 +103,7 @@ public class DoctorRegister extends AppCompatActivity {
                             userMap.put("mobile", "");
                             userMap.put("email", email);
                             userMap.put("experience","");
+                            userMap.put("degree_certificate","");
 
                             mDatabase.setValue(userMap);
 
@@ -113,7 +114,7 @@ public class DoctorRegister extends AppCompatActivity {
                             Toast.makeText(DoctorRegister.this, "Registration Success. Please continue",
                                     Toast.LENGTH_SHORT).show();
                             userProfile();
-                            startActivity(new Intent(getApplicationContext(), Profile.class));
+                            startActivity(new Intent(getApplicationContext(), UploadDegreeCertificateActivity.class));
 
                         } else {
                             mProgressDialog.dismiss();

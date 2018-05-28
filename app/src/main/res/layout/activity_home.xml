@@ -134,4 +134,11 @@
             android:textSize="15sp"
             android:onClick="openconnectionsettings"/>
 
-    </LinearLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="degree"/>
+
+</LinearLayout>

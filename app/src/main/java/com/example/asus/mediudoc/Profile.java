@@ -256,7 +256,7 @@ public class Profile extends AppCompatActivity {
                         Toast.makeText(Profile.this, "Please enter valid Pincode", Toast.LENGTH_SHORT).show();
                     }
 
-
+                    startActivity(new Intent(getApplicationContext(), Home.class));
                 }
                 else {
                     mProgressDialog.dismiss();

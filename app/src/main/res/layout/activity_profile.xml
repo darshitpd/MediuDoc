@@ -78,23 +78,34 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
+        android:paddingLeft="10dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
-    <EditText
-
-        android:id="@+id/etMobile"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittext_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:hint="@string/phone"
-        android:inputType="phone"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Degree Certificate:"
+            android:padding="10dp"
+            android:textSize="18dp"
+            />
+
+        <Button
+            android:id="@+id/etDegreeCertificate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Upload"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+
 
     <!--<EditText-->
 
@@ -139,16 +150,30 @@
             android:padding="10dp"
             android:textSize="18dp"
             />
+
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/etDob"
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
             android:padding="10dp"
-            android:textSize="18dp"
-            android:text="DOB"/>
+            android:text="DOB"
+            android:textSize="18dp" />
 
     </LinearLayout>
 
+    <EditText
+
+        android:id="@+id/etMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
 
