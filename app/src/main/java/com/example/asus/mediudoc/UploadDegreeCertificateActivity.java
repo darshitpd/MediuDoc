@@ -37,12 +37,15 @@ public class UploadDegreeCertificateActivity extends AppCompatActivity {
     private static final int Gallery_request=1;
     private StorageReference mStorage;
     private FirebaseUser mCurrent_user;
+    private ProgressDialog mProgress;
     private DatabaseReference mDoctorInfoDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_degree_certificate);
+
+        mProgress=new ProgressDialog(this);
         mStorage = FirebaseStorage.getInstance().getReference();
         mCurrent_user = FirebaseAuth.getInstance().getCurrentUser();
         mDoctorInfoDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Users").child(mCurrent_user.getUid());
@@ -68,6 +71,8 @@ public class UploadDegreeCertificateActivity extends AppCompatActivity {
         });
     }
     private void  startPosting(){
+        mProgress.setMessage("Uploading..");
+        mProgress.show();
 
         String user_id= mCurrent_user.getUid();
         if (mImageUri!=null){
@@ -81,6 +86,7 @@ public class UploadDegreeCertificateActivity extends AppCompatActivity {
                     Uri downloadUrl=taskSnapshot.getDownloadUrl();
 
                     mDoctorInfoDatabase.child("degree_certificate").setValue(downloadUrl.toString());
+                    mProgress.dismiss();
 
                     Toast.makeText(UploadDegreeCertificateActivity.this, "Success", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), Profile.class));
@@ -88,6 +94,7 @@ public class UploadDegreeCertificateActivity extends AppCompatActivity {
             });
         }
         else{
+            mProgress.dismiss();
             Toast.makeText(UploadDegreeCertificateActivity.this, "Please full up all the details", Toast.LENGTH_SHORT).show();
         }
     }

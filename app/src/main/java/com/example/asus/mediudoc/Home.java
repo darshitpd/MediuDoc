@@ -93,9 +93,6 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
 
     }
-    public void degree(View view) {
-        Intent intent = new Intent(this, UploadDegreeCertificateActivity.class);
-        startActivity(intent);    }
 
 //    public void myhealth(View view) {
 //        Intent intent = new Intent(this, MyHealth.class);
