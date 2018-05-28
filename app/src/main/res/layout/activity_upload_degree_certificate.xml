@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.asus.mediudoc.UploadDegreeCertificateActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please upload your Degree Certificate in image format"
+            android:textSize="30sp"
+            android:padding="10dp"
+            android:layout_marginTop="30dp"
+            />
+
+        <ImageButton
+            android:id="@+id/btAddCertificateImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/add_btn"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btSaveCertificate"
+            android:text="Save"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>
