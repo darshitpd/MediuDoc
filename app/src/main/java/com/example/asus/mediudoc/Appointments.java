@@ -20,6 +20,6 @@ public class Appointments extends AppCompatActivity {
         startActivity(intent);    }
 
     public void openConfirmedAptList(View view) {
-        Intent intent = new Intent(this, ConfirmedAptListActivity.class);
+        Intent intent = new Intent(this, ConfirmAptListActivity.class);
         startActivity(intent);    }
 }

@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.asus.mediudoc.ConfirmedAptListActivity">
+    tools:context="com.example.asus.mediudoc.ConfirmAptListActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/confirm_apt_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        ></android.support.v7.widget.RecyclerView>
 
 </android.support.constraint.ConstraintLayout>
