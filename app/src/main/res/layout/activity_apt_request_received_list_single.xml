@@ -4,27 +4,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?android:selectableItemBackground">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_single_image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/default_avatar" />
-
     <TextView
-        android:id="@+id/user_single_name"
+        android:id="@+id/apt_single_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/user_single_image"
         android:layout_marginBottom="18dp"
         android:layout_marginStart="22dp"
-        android:layout_toEndOf="@+id/user_single_image"
+        android:padding="10dp"
         android:text="Display Name"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
-
-
 </RelativeLayout>

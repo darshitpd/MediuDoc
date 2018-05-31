@@ -93,12 +93,7 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-//    public void myhealth(View view) {
-//        Intent intent = new Intent(this, MyHealth.class);
-//        startActivity(intent);    }
-//
-
+    
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

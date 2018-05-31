@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".DoctorLogin"
             android:parentActivityName=".MainActivity" />
@@ -79,7 +79,9 @@
         <activity
             android:name=".Doctor_connect_patient"
             android:parentActivityName=".Home" />
-        <activity android:name=".UploadDegreeCertificateActivity"></activity>
+        <activity android:name=".UploadDegreeCertificateActivity" />
+        <activity android:name=".RequestedAptListActivity" />
+        <activity android:name=".ConfirmedAptListActivity"></activity>
     </application>
 
 </manifest>

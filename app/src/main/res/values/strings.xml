@@ -13,7 +13,7 @@
     <string name="myhealth">My Health</string>
     <string name="appointments">Appointments</string>
     <string name="healthfeed">Health Feed</string>
-    <string name="welcome">Welcome,</string>
+    <string name="welcome">Welcome, </string>
     <string name="help">How can we help you today?</string>
     <string name="seedoctor">See a Medical Doctor Now</string>
     <string name="history">Visit History</string>
