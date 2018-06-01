@@ -104,6 +104,8 @@ public class DoctorRegister extends AppCompatActivity {
                             userMap.put("email", email);
                             userMap.put("experience","");
                             userMap.put("degree_certificate","");
+                            userMap.put("description", "");
+                            userMap.put("working","");
 
                             mDatabase.setValue(userMap);
 
