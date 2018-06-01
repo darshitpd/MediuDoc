@@ -18,22 +18,8 @@
 
             <!--android:onClick="myhealth"    add it below-->
 
-            <TextView
-                android:id="@+id/text1"
-                android:layout_width="0dp"
-                android:layout_height="50sp"
-                android:layout_weight="1"
-                android:background="@drawable/selectors"
-                android:clickable="true"
-                android:paddingTop="15sp"
-                android:text="@string/myhealth"
-                android:textAlignment="center"
-                android:textColor="#039953" />
 
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@android:color/darker_gray" />
+
 
             <TextView
                 android:id="@+id/doc_appointments"

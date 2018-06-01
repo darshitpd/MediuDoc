@@ -65,7 +65,7 @@ public class Profile extends AppCompatActivity {
     private Button mSaveButton;
     private CircleImageView image_profile;
     private ProgressDialog mProgressDialog;
-    private EditText mFirstname, mLastname, mMobile, mAddress, mExp , mpincode;
+    private EditText mFirstname, mLastname, mMobile, mAddress, mExp , mpincode, mWorkingTime, mDescription;
     private TextView mEmail,mDob;
     private RadioGroup rg_gender;
     private RadioButton radioButton, radiobutton_male, radiobutton_female;
@@ -108,6 +108,8 @@ public class Profile extends AppCompatActivity {
         radiobutton_male = (RadioButton)findViewById(R.id.radiobutton_male);
         radiobutton_female = (RadioButton)findViewById(R.id.radiobutton_female);
         mpincode = (EditText)findViewById(R.id.etpincode);
+        mWorkingTime = (EditText) findViewById(R.id.etWorkingTime);
+        mDescription =(EditText) findViewById(R.id.etDescription);
 
         mCurrentUser = FirebaseAuth.getInstance().getCurrentUser();
         mImageStorage = FirebaseStorage.getInstance().getReference();
@@ -132,6 +134,8 @@ public class Profile extends AppCompatActivity {
                 String thumbnail = dataSnapshot.child("thumbnail").getValue().toString();
                 String exp = dataSnapshot.child("experience").getValue().toString();
                 String pincode = dataSnapshot.child("pincode").getValue().toString();
+                String workingTime= dataSnapshot.child("working").getValue().toString();
+                String description = dataSnapshot.child("description").getValue().toString();
 
                 mFirstname.setText(firstname);
                 mLastname.setText(lastname);
@@ -142,6 +146,8 @@ public class Profile extends AppCompatActivity {
                 mExp.setText(exp);
                // mSpecialist.setText(specialist);
                 mpincode.setText(pincode);
+                mWorkingTime.setText(workingTime);
+                mDescription.setText(description);
 
 
                 if(gender.equals("Male")){
@@ -214,11 +220,15 @@ public class Profile extends AppCompatActivity {
                 radioButton = findViewById(rg_gender.getCheckedRadioButtonId());
                 String gender= radioButton.getText().toString();
                 String pincode = mpincode.getEditableText().toString();
+                String workingTime = mWorkingTime.getEditableText().toString();
+                String description = mDescription.getEditableText().toString();
 
                 if(!TextUtils.isEmpty(firstname) && !TextUtils.isEmpty(lastname) && !TextUtils.isEmpty(mobile)
-                        && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(gender)) {
+                        && !TextUtils.isEmpty(address) && !TextUtils.isEmpty(gender) && !TextUtils.isEmpty(workingTime) && !TextUtils.isEmpty(description)) {
                     mUserDatabase.child("firstname").setValue(firstname);
                     mUserDatabase.child("lastname").setValue(lastname);
+                    mUserDatabase.child("working").setValue(workingTime);
+                    mUserDatabase.child("description").setValue(description);
                     if(mobile.length()==10){
                         mUserDatabase.child("mobile").setValue(mobile);}
                     else {

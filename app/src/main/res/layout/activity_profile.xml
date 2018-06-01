@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.asus.mediudoc.Profile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
         <de.hdodenhof.circleimageview.CircleImageView
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/image_profile"
@@ -136,6 +141,28 @@
             android:textSize="18dp" />
 
     </LinearLayout>
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:hint="Give a description about yourself"
+            android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/etWorkingTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:hint="Enter your working days and hours"
+        android:inputType="textMultiLine" />
 
     <EditText
 
@@ -240,4 +267,5 @@
             android:paddingRight="10dp"
             android:layout_margin="15dp"
             android:text="Save" />
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

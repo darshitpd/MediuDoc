@@ -85,7 +85,8 @@
         <activity android:name=".SingleRequestAppointment" />
         <activity android:name=".DeleteAppointmentActivity" />
         <activity android:name=".ConfirmAptListActivity" />
-        <activity android:name=".SingleConfirmAppointment"></activity>
+        <activity android:name=".SingleConfirmAppointment" />
+        <activity android:name=".SingleRescheduleAppointment"></activity>
     </application>
 
 </manifest>

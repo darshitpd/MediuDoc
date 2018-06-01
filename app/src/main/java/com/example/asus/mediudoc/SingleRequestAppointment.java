@@ -152,5 +152,14 @@ public class SingleRequestAppointment extends AppCompatActivity {
                 mAptConfirmDocDatabase.child("status").setValue("confirm");
             }
         });
+
+        mReschedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent profileIntent = new Intent(SingleRequestAppointment.this, SingleRescheduleAppointment.class);
+                profileIntent.putExtra("apt_id", apt_id);
+                startActivity(profileIntent);
+            }
+        });
     }
 }
