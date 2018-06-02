@@ -79,13 +79,33 @@
         <activity
             android:name=".Doctor_connect_patient"
             android:parentActivityName=".Home" />
-        <activity android:name=".UploadDegreeCertificateActivity" />
-        <activity android:name=".RequestedAptListActivity" />
+
+
+        <activity
+            android:name=".UploadDegreeCertificateActivity"
+            />
+
+        <activity
+            android:name=".RequestedAptListActivity"
+            android:parentActivityName=".Appointments"/>
+
+
         <activity android:name=".SingleAppointmentPage" />
-        <activity android:name=".SingleRequestAppointment" />
+
+        <activity
+            android:name=".SingleRequestAppointment"
+            android:parentActivityName=".RequestedAptListActivity"/>
+
         <activity android:name=".DeleteAppointmentActivity" />
-        <activity android:name=".ConfirmAptListActivity" />
-        <activity android:name=".SingleConfirmAppointment" />
+
+        <activity
+            android:name=".ConfirmAptListActivity"
+            android:parentActivityName=".Appointments"/>
+
+        <activity
+            android:name=".SingleConfirmAppointment"
+            android:parentActivityName=".ConfirmAptListActivity"/>
+
         <activity android:name=".SingleRescheduleAppointment"></activity>
     </application>
 

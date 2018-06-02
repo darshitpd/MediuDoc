@@ -28,6 +28,8 @@ public class RequestedAptListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requested_apt_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         mCurrent_user= FirebaseAuth.getInstance().getCurrentUser();
         mDocUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Doctor_Users").child(mCurrent_user.getUid()).child("Appointments").child("Request");

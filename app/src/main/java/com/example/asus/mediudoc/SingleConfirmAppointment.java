@@ -27,6 +27,8 @@ public class SingleConfirmAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_confirm_appointment);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         apt_id = getIntent().getStringExtra("apt_id");
         mReason= (TextView)findViewById(R.id.tvReason);
         mDate= (TextView)findViewById(R.id.tvDate);

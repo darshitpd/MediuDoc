@@ -34,6 +34,7 @@ public class SingleRequestAppointment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_request_appointment);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         apt_id = getIntent().getStringExtra("apt_id");
